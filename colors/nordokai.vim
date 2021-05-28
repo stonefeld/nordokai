@@ -1,9 +1,6 @@
 " Initialization: {{{
 let s:configuration = nordokai#get_configuration()
 let s:palette = nordokai#get_palette(s:configuration.style)
-" let s:path = expand('<sfile>:p') " the path of this script
-" let s:last_modified = 'Sun Feb 07 12:31:32 AM UTC 2021'
-" let g:nordokai_loaded_file_types = []
 
 if !(exists('g:colors_name') && g:colors_name ==# 'nordokai' && s:configuration.better_performance)
   highlight clear
@@ -667,26 +664,7 @@ highlight! link netrwVersion Purple
 " }}}
 " }}}
 " " Extended File Types: {{{
-" " Note: To ensure that the `s:last_modified` variable is always up to date, you need to copy `.githooks/pre-commit` to `.git/hooks/pre-commit`.
-" " Generate the `after/ftplugin` directory based on the comment tags in this file.
-" " For example, the content between `ft_begin: sh/zsh` and `ft_end` will be placed in `after/ftplugin/sh/nordokai.vim` and `after/ftplugin/zsh/nordokai.vim`.
-" if nordokai#ft_exists(s:path) " If the ftplugin exists.
-"   if s:configuration.better_performance
-"     if !nordokai#ft_newest(s:path, s:last_modified) " Regenerate if it's not up to date.
-"       call nordokai#ft_clean(s:path, 0)
-"       call nordokai#ft_gen(s:path, s:last_modified, 'update')
-"     endif
-"     finish
-"   elseif !has('nvim') " Only clean the `after/ftplugin` directory when in vim. This code will produce a bug in neovim.
-"     call nordokai#ft_clean(s:path, 1)
-"   endif
-" else
-"   if s:configuration.better_performance
-"     call nordokai#ft_gen(s:path, s:last_modified, 'generate')
-"     finish
-"   endif
-" endif
-" " ft_begin: vim-plug {{{
+" " vim-plug {{{
 " " https://github.com/junegunn/vim-plug
 call nordokai#highlight('plug1', s:palette.nordokai11, s:palette.none, 'bold')
 call nordokai#highlight('plugNumber', s:palette.nordokai13, s:palette.none, 'bold')
@@ -703,8 +681,8 @@ highlight! link plugStar Purple
 highlight! link plugUpdate Blue
 highlight! link plugDeleted Grey
 highlight! link plugEdge Purple
-" ft_end }}}
-" ft_begin: tagbar {{{
+" }}}
+" tagbar {{{
 " https://github.com/majutsushi/tagbar
 highlight! link TagbarFoldIcon Blue
 highlight! link TagbarSignature Green
@@ -713,8 +691,8 @@ highlight! link TagbarScope Orange
 highlight! link TagbarNestedKind Blue
 highlight! link TagbarVisibilityPrivate Red
 highlight! link TagbarVisibilityPublic Blue
-" ft_end }}}
-" ft_begin: vista/vista_kind/vista_markdown {{{
+" }}}
+" vista/vista_kind/vista_markdown {{{
 " https://github.com/liuchengxu/vista.vim
 highlight! link VistaBracket Grey
 highlight! link VistaChildrenNr Orange
@@ -729,8 +707,8 @@ highlight! link VistaHeadNr Fg
 highlight! link VistaPublic Green
 highlight! link VistaProtected Yellow
 highlight! link VistaPrivate Red
-" ft_end }}}
-" ft_begin: nerdtree {{{
+" }}}
+" nerdtree {{{
 " https://github.com/preservim/nerdtree
 highlight! link NERDTreeDir Green
 highlight! link NERDTreeDirSlash Green
@@ -746,13 +724,13 @@ highlight! link NERDTreeToggleOff Red
 highlight! link NERDTreeFlags Blue
 highlight! link NERDTreeLinkFile Grey
 highlight! link NERDTreeLinkTarget Green
-" ft_end }}}
-" ft_begin: dirvish {{{
+" }}}
+" dirvish {{{
 " https://github.com/justinmk/vim-dirvish
 highlight! link DirvishPathTail Blue
 highlight! link DirvishArg Yellow
-" ft_end }}}
-" ft_begin: startify/quickmenu {{{
+" }}}
+" startify/quickmenu {{{
 " https://github.com/mhinz/vim-startify
 " https://github.com/skywind3000/quickmenu.vim
 highlight! link StartifyBracket Grey
@@ -763,8 +741,8 @@ highlight! link StartifySlash Grey
 highlight! link StartifySection Blue
 highlight! link StartifyHeader Red
 highlight! link StartifySpecial Grey
-" ft_end }}}
-" ft_begin: quickmenu {{{
+" }}}
+" quickmenu {{{
 " https://github.com/skywind3000/quickmenu.vim
 highlight! link QuickmenuOption Green
 highlight! link QuickmenuNumber Orange
@@ -772,8 +750,8 @@ highlight! link QuickmenuBracket Grey
 highlight! link QuickmenuHelp Blue
 highlight! link QuickmenuSpecial Grey
 highlight! link QuickmenuHeader Purple
-" ft_end }}}
-" ft_begin: undotree {{{
+" }}}
+" undotree {{{
 " https://github.com/mbbill/undotree
 call nordokai#highlight('UndotreeSavedBig', s:palette.nordokai11, s:palette.none, 'bold')
 highlight! link UndotreeNode Blue
@@ -785,8 +763,8 @@ highlight! link UndotreeTimeStamp Grey
 highlight! link UndotreeHead Purple
 highlight! link UndotreeBranch Blue
 highlight! link UndotreeSavedSmall Red
-" ft_end }}}
-" ft_begin: markdown {{{
+" }}}
+" markdown {{{
 " builtin: {{{
 call nordokai#highlight('markdownH1', s:palette.nordokai6, s:palette.none, 'bold')
 call nordokai#highlight('markdownH2', s:palette.nordokai6, s:palette.none, 'bold')
@@ -829,8 +807,8 @@ highlight! link mkdRule Purple
 highlight! link mkdDelimiter Grey
 highlight! link mkdId Yellow
 " }}}
-" ft_end }}}
-" ft_begin: rst {{{
+" }}}
+" rst {{{
 " builtin: https://github.com/marshallward/vim-restructuredtext{{{
 call nordokai#highlight('rstStandaloneHyperlink', s:palette.nordokai15, s:palette.none, 'underline')
 call nordokai#highlight('rstEmphasis', s:palette.none, s:palette.none, 'italic')
@@ -844,8 +822,8 @@ highlight! link rstInlineLiteral Green
 highlight! link rstLiteralBlock Green
 highlight! link rstQuotedLiteralBlock Green
 " }}}
-" ft_end }}}
-" ft_begin: tex {{{
+" }}}
+" tex {{{
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX{{{
 highlight! link texStatement BlueItalic
 highlight! link texOnlyMath Grey
@@ -872,8 +850,8 @@ highlight! link texCmdEnv Red
 highlight! link texCmdPart Red
 highlight! link texEnvArgName Green
 " }}}
-" ft_end }}}
-" ft_begin: html/markdown/javascriptreact/typescriptreact {{{
+" }}}
+" html/markdown/javascriptreact/typescriptreact {{{
 " builtin: https://notabug.org/jorgesumle/vim-html-syntax{{{
 call nordokai#highlight('htmlH1', s:palette.nordokai6, s:palette.none, 'bold')
 call nordokai#highlight('htmlH2', s:palette.nordokai6, s:palette.none, 'bold')
@@ -898,13 +876,13 @@ highlight! link htmlScriptTag Red
 highlight! link htmlSpecialTagName BlueItalic
 highlight! link htmlString String
 " }}}
-" ft_end }}}
-" ft_begin: htmldjango {{{
+" }}}
+" htmldjango {{{
 " builtin: https://github.com/vim/vim/blob/master/runtime/syntax/htmldjango.vim{{{
 highlight! link djangoTagBlock Yellow
 " }}}
-" ft_end }}}
-" ft_begin: xml {{{
+" }}}
+" xml {{{
 " builtin: https://github.com/chrisbra/vim-xml-ftplugin{{{
 highlight! link xmlTag Green
 highlight! link xmlEndTag Blue
@@ -919,8 +897,8 @@ highlight! link xmlCdataStart Grey
 highlight! link xmlCdataCdata Purple
 highlight! link xmlString Green
 " }}}
-" ft_end }}}
-" ft_begin: css/scss/sass/less {{{
+" }}}
+" css/scss/sass/less {{{
 " builtin: https://github.com/JulesWang/css.vim{{{
 highlight! link cssStringQ Green
 highlight! link cssStringQQ Green
@@ -950,8 +928,8 @@ highlight! link cssValueFrequency Green
 highlight! link cssVendor Grey
 highlight! link cssNoise Grey
 " }}}
-" ft_end }}}
-" ft_begin: scss {{{
+" }}}
+" scss {{{
 " scss-syntax: https://github.com/cakebaker/scss-syntax.vim{{{
 highlight! link scssMixinName Orange
 highlight! link scssSelectorChar Grey
@@ -966,15 +944,15 @@ highlight! link scssFunctionName Orange
 highlight! link scssVariable Fg
 highlight! link scssAmpersand Purple
 " }}}
-" ft_end }}}
-" ft_begin: less {{{
+" }}}
+" less {{{
 " vim-less: https://github.com/groenewege/vim-less{{{
 highlight! link lessMixinChar Grey
 highlight! link lessClass Red
 highlight! link lessFunction Orange
 " }}}
-" ft_end }}}
-" ft_begin: javascript/javascriptreact {{{
+" }}}
+" javascript/javascriptreact {{{
 " builtin: http://www.fleiner.com/vim/syntax/javascript.vim{{{
 highlight! link javaScriptNull OrangeItalic
 highlight! link javaScriptIdentifier BlueItalic
@@ -1167,8 +1145,8 @@ highlight! link jsxClosePunct Blue
 highlight! link jsxEscapeJs Purple
 highlight! link jsxAttrib Blue
 " }}}
-" ft_end }}}
-" ft_begin: typescript/typescriptreact {{{
+" }}}
+" typescript/typescriptreact {{{
 " vim-typescript: https://github.com/leafgarland/typescript-vim{{{
 highlight! link typescriptStorageClass Red
 highlight! link typescriptEndColons Fg
@@ -1323,8 +1301,8 @@ highlight! link typescriptDOMFormProp Fg
 highlight! link typescriptBOMHistoryProp Fg
 highlight! link typescriptMathStaticProp Fg
 " }}}
-" ft_end }}}
-" ft_begin: dart {{{
+" }}}
+" dart {{{
 " dart-lang: https://github.com/dart-lang/dart-vim-plugin{{{
 highlight! link dartCoreClasses BlueItalic
 highlight! link dartTypeName BlueItalic
@@ -1334,8 +1312,8 @@ highlight! link dartClassDecl Red
 highlight! link dartLibrary Red
 highlight! link dartMetadata OrangeItalic
 " }}}
-" ft_end }}}
-" ft_begin: c/cpp/objc/objcpp {{{
+" }}}
+" c/cpp/objc/objcpp {{{
 " vim-cpp-enhanced-highlight: https://github.com/octol/vim-cpp-enhanced-highlight{{{
 highlight! link cLabel Red
 highlight! link cppSTLnamespace BlueItalic
@@ -1368,8 +1346,8 @@ highlight! link LspCxxHlGroupEnumConstant OrangeItalic
 highlight! link LspCxxHlGroupNamespace BlueItalic
 highlight! link LspCxxHlGroupMemberVariable OrangeItalic
 " }}}
-" ft_end }}}
-" ft_begin: objc {{{
+" }}}
+" objc {{{
 " builtin: {{{
 highlight! link objcModuleImport Red
 highlight! link objcException Red
@@ -1378,8 +1356,8 @@ highlight! link objcDirective Red
 highlight! link objcPropertyAttribute Purple
 highlight! link objcHiddenArgument Fg
 " }}}
-" ft_end }}}
-" ft_begin: cs {{{
+" }}}
+" cs {{{
 " builtin: https://github.com/nickspoons/vim-cs{{{
 highlight! link csUnspecifiedStatement Red
 highlight! link csStorage Red
@@ -1390,8 +1368,8 @@ highlight! link csInterpolationDelimiter Purple
 highlight! link csInterpolation Purple
 highlight! link csEndColon Fg
 " }}}
-" ft_end }}}
-" ft_begin: python {{{
+" }}}
+" python {{{
 " builtin: {{{
 highlight! link pythonBuiltin BlueItalic
 highlight! link pythonExceptions Red
@@ -1430,8 +1408,8 @@ highlight! link semshiSelected CocHighlightText
 highlight! link semshiErrorSign ALEErrorSign
 highlight! link semshiErrorChar ALEErrorSign
 " }}}
-" ft_end }}}
-" ft_begin: lua {{{
+" }}}
+" lua {{{
 " builtin: {{{
 highlight! link luaFunc Green
 highlight! link luaFunction Red
@@ -1451,8 +1429,8 @@ highlight! link luaFuncArgName Fg
 highlight! link luaEllipsis Red
 highlight! link luaDocTag Green
 " }}}
-" ft_end }}}
-" ft_begin: java {{{
+" }}}
+" java {{{
 " builtin: {{{
 highlight! link javaClassDecl Red
 highlight! link javaMethodDecl Red
@@ -1467,8 +1445,8 @@ highlight! link javaParen3 Fg
 highlight! link javaParen4 Fg
 highlight! link javaParen5 Fg
 " }}}
-" ft_end }}}
-" ft_begin: kotlin {{{
+" }}}
+" kotlin {{{
 " kotlin-vim: https://github.com/udalov/kotlin-vim{{{
 highlight! link ktSimpleInterpolation Purple
 highlight! link ktComplexInterpolation Purple
@@ -1476,8 +1454,8 @@ highlight! link ktComplexInterpolationBrace Purple
 highlight! link ktStructure Red
 highlight! link ktKeyword OrangeItalic
 " }}}
-" ft_end }}}
-" ft_begin: scala {{{
+" }}}
+" scala {{{
 " builtin: https://github.com/derekwyatt/vim-scala{{{
 highlight! link scalaNameDefinition Fg
 highlight! link scalaInterpolationBoundary Purple
@@ -1486,8 +1464,8 @@ highlight! link scalaTypeOperator Red
 highlight! link scalaOperator Red
 highlight! link scalaKeywordModifier Red
 " }}}
-" ft_end }}}
-" ft_begin: go {{{
+" }}}
+" go {{{
 " builtin: https://github.com/google/vim-ft-go{{{
 highlight! link goDirective Red
 highlight! link goConstants OrangeItalic
@@ -1500,8 +1478,8 @@ highlight! link goBuiltins Green
 highlight! link goPredefinedIdentifiers OrangeItalic
 highlight! link goVar Red
 " }}}
-" ft_end }}}
-" ft_begin: rust {{{
+" }}}
+" rust {{{
 " builtin: https://github.com/rust-lang/rust.vim{{{
 highlight! link rustStructure Red
 highlight! link rustIdentifier OrangeItalic
@@ -1517,8 +1495,8 @@ highlight! link rustPanic Green
 highlight! link rustPubScopeCrate BlueItalic
 highlight! link rustAttribute Purple
 " }}}
-" ft_end }}}
-" ft_begin: swift {{{
+" }}}
+" swift {{{
 " swift.vim: https://github.com/keith/swift.vim{{{
 highlight! link swiftInterpolatedWrapper Purple
 highlight! link swiftInterpolatedString Purple
@@ -1527,8 +1505,8 @@ highlight! link swiftTypeDeclaration Red
 highlight! link swiftClosureArgument OrangeItalic
 highlight! link swiftStructure Red
 " }}}
-" ft_end }}}
-" ft_begin: php {{{
+" }}}
+" php {{{
 " builtin: https://jasonwoof.com/gitweb/?p=vim-syntax.git;a=blob;f=php.vim;hb=HEAD{{{
 highlight! link phpVarSelector Fg
 highlight! link phpIdentifier Fg
@@ -1551,8 +1529,8 @@ highlight! link phpClass BlueItalic
 highlight! link phpSuperglobals BlueItalic
 highlight! link phpNullValue OrangeItalic
 " }}}
-" ft_end }}}
-" ft_begin: ruby {{{
+" }}}
+" ruby {{{
 " builtin: https://github.com/vim-ruby/vim-ruby{{{
 highlight! link rubyKeywordAsMethod Green
 highlight! link rubyInterpolation Purple
@@ -1565,8 +1543,8 @@ highlight! link rubyAccess Red
 highlight! link rubyMacro Red
 highlight! link rubySymbol Fg
 " }}}
-" ft_end }}}
-" ft_begin: haskell {{{
+" }}}
+" haskell {{{
 " haskell-vim: https://github.com/neovimhaskell/haskell-vim{{{
 highlight! link haskellBrackets Fg
 highlight! link haskellIdentifier OrangeItalic
@@ -1577,8 +1555,8 @@ highlight! link haskellWhere Red
 highlight! link haskellDeriving Red
 highlight! link haskellForeignKeywords Red
 " }}}
-" ft_end }}}
-" ft_begin: perl/pod {{{
+" }}}
+" perl/pod {{{
 " builtin: https://github.com/vim-perl/vim-perl{{{
 highlight! link perlStatementPackage Red
 highlight! link perlStatementInclude Red
@@ -1593,8 +1571,8 @@ highlight! link podCmdText Yellow
 highlight! link perlVarPlain Fg
 highlight! link perlVarPlain2 Fg
 " }}}
-" ft_end }}}
-" ft_begin: ocaml {{{
+" }}}
+" ocaml {{{
 " builtin: https://github.com/rgrinberg/vim-ocaml{{{
 highlight! link ocamlArrow Red
 highlight! link ocamlEqual Red
@@ -1612,8 +1590,8 @@ highlight! link ocamlPpxIdentifier Fg
 highlight! link ocamlSigEncl Red
 highlight! link ocamlModParam1 Fg
 " }}}
-" ft_end }}}
-" ft_begin: erlang {{{
+" }}}
+" erlang {{{
 " builtin: https://github.com/vim-erlang/vim-erlang-runtime{{{
 highlight! link erlangAtom Fg
 highlight! link erlangVariable Fg
@@ -1624,8 +1602,8 @@ highlight! link erlangGlobalFuncCall Green
 highlight! link erlangAttribute BlueItalic
 highlight! link erlangPipe Red
 " }}}
-" ft_end }}}
-" ft_begin: elixir {{{
+" }}}
+" elixir {{{
 " vim-elixir: https://github.com/elixir-editors/vim-elixir{{{
 highlight! link elixirStringDelimiter Yellow
 highlight! link elixirKeyword Red
@@ -1652,15 +1630,15 @@ highlight! link elixirCallbackDefine Red
 highlight! link elixirStructDefine Red
 highlight! link elixirExUnitMacro Red
 " }}}
-" ft_end }}}
-" ft_begin: lisp {{{
+" }}}
+" lisp {{{
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_LISP{{{
 highlight! link lispAtomMark Purple
 highlight! link lispKey Orange
 highlight! link lispFunc Green
 " }}}
-" ft_end }}}
-" ft_begin: clojure {{{
+" }}}
+" clojure {{{
 " builtin: https://github.com/guns/vim-clojure-static{{{
 highlight! link clojureMacro Red
 highlight! link clojureFunc Green
@@ -1672,8 +1650,8 @@ highlight! link clojureVariable Fg
 highlight! link clojureMeta Purple
 highlight! link clojureDeref Purple
 " }}}
-" ft_end }}}
-" ft_begin: matlab {{{
+" }}}
+" matlab {{{
 " builtin: {{{
 highlight! link matlabSemicolon Fg
 highlight! link matlabFunction RedItalic
@@ -1686,8 +1664,8 @@ highlight! link matlabRelationalOperator Red
 highlight! link matlabRelationalOperator Red
 highlight! link matlabLogicalOperator Red
 " }}}
-" ft_end }}}
-" ft_begin: sh/zsh {{{
+" }}}
+" sh/zsh {{{
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_SH{{{
 highlight! link shRange Fg
 highlight! link shOption Purple
@@ -1701,23 +1679,23 @@ highlight! link shVarAssign Red
 highlight! link shFunctionOne Green
 highlight! link shFunctionKey Red
 " }}}
-" ft_end }}}
-" ft_begin: zsh {{{
+" }}}
+" zsh {{{
 " builtin: https://github.com/chrisbra/vim-zsh{{{
 highlight! link zshOption BlueItalic
 highlight! link zshSubst Orange
 highlight! link zshFunction Green
 " }}}
-" ft_end }}}
-" ft_begin: ps1 {{{
+" }}}
+" ps1 {{{
 " vim-ps1: https://github.com/PProvost/vim-ps1{{{
 highlight! link ps1FunctionInvocation Green
 highlight! link ps1FunctionDeclaration Green
 highlight! link ps1InterpolationDelimiter Purple
 highlight! link ps1BuiltIn BlueItalic
 " }}}
-" ft_end }}}
-" ft_begin: vim {{{
+" }}}
+" vim {{{
 call nordokai#highlight('vimCommentTitle', s:palette.nordokai16, s:palette.none, 'bold')
 highlight! link vimLet Red
 highlight! link vimFunction Green
@@ -1738,14 +1716,14 @@ highlight! link vimSynType Orange
 highlight! link vimHiBang Orange
 highlight! link vimSet BlueItalic
 highlight! link vimSetSep Grey
-" ft_end }}}
-" ft_begin: make {{{
+" }}}
+" make {{{
 highlight! link makeIdent Purple
 highlight! link makeSpecTarget BlueItalic
 highlight! link makeTarget Orange
 highlight! link makeCommands Red
-" ft_end }}}
-" ft_begin: cmake {{{
+" }}}
+" cmake {{{
 highlight! link cmakeCommand Red
 highlight! link cmakeKWconfigure_package_config_file BlueItalic
 highlight! link cmakeKWwrite_basic_package_version_file BlueItalic
@@ -1850,28 +1828,28 @@ highlight! link cmakeKWuse_mangled_mesa Green
 highlight! link cmakeKWvariable_requires Green
 highlight! link cmakeKWvariable_watch Green
 highlight! link cmakeKWwrite_file Green
-" ft_end }}}
-" ft_begin: json {{{
+" }}}
+" json {{{
 highlight! link jsonKeyword Red
 highlight! link jsonString Green
 highlight! link jsonBoolean Blue
 highlight! link jsonNoise Grey
 highlight! link jsonQuote Grey
 highlight! link jsonBraces Fg
-" ft_end }}}
-" ft_begin: yaml {{{
+" }}}
+" yaml {{{
 highlight! link yamlKey Red
 highlight! link yamlConstant BlueItalic
 highlight! link yamlString Green
-" ft_end }}}
-" ft_begin: toml {{{
+" }}}
+" toml {{{
 call nordokai#highlight('tomlTable', s:palette.nordokai15, s:palette.none, 'bold')
 highlight! link tomlKey Red
 highlight! link tomlBoolean Blue
 highlight! link tomlString Green
 highlight! link tomlTableArray tomlTable
-" ft_end }}}
-" ft_begin: diff/git {{{
+" }}}
+" diff/git {{{
 highlight! link diffAdded Green
 highlight! link diffRemoved Red
 highlight! link diffChanged Blue
@@ -1880,8 +1858,8 @@ highlight! link diffNewFile Orange
 highlight! link diffFile Purple
 highlight! link diffLine Grey
 highlight! link diffIndexLine Purple
-" ft_end }}}
-" ft_begin: gitcommit {{{
+" }}}
+" gitcommit {{{
 highlight! link gitcommitSummary Red
 highlight! link gitcommitUntracked Grey
 highlight! link gitcommitDiscarded Grey
@@ -1890,14 +1868,14 @@ highlight! link gitcommitUnmerged Grey
 highlight! link gitcommitOnBranch Grey
 highlight! link gitcommitArrow Grey
 highlight! link gitcommitFile Green
-" ft_end }}}
-" ft_begin: dosini {{{
+" }}}
+" dosini {{{
 call nordokai#highlight('dosiniHeader', s:palette.nordokai11, s:palette.none, 'bold')
 highlight! link dosiniLabel Blue
 highlight! link dosiniValue Green
 highlight! link dosiniNumber Green
-" ft_end }}}
-" ft_begin: help {{{
+" }}}
+" help {{{
 call nordokai#highlight('helpNote', s:palette.nordokai15, s:palette.none, 'bold')
 call nordokai#highlight('helpHeadline', s:palette.nordokai11, s:palette.none, 'bold')
 call nordokai#highlight('helpHeader', s:palette.nordokai12, s:palette.none, 'bold')
@@ -1908,5 +1886,5 @@ highlight! link helpCommand Yellow
 highlight! link helpExample Green
 highlight! link helpSpecial Purple
 highlight! link helpSectionDelim Grey
-" ft_end }}}
+" }}}
 " }}}
