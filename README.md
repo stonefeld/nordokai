@@ -1,9 +1,9 @@
 # Nordokai
 A Vim/Neovim colorscheme based on the syntax highlighting from [Monokai Pro](https://monokai.pro/vscode) and the [Nord](https://www.nordtheme.com/) color palette.
 
-One of my favourites colorschemes for every text editor is the [nord colorscheme](https://www.nordtheme.com/ports) which is available on almost every platform.
+One of my favorites colorschemes for every text editor is the [nord colorscheme](https://www.nordtheme.com/ports) which is available on almost every platform.
 
-However, I find some troubles trying to accept the lack of colour variety, since it always uses the same bueish color tone.
+However, I find some troubles trying to accept the lack of color variety, since it always uses the same bueish color tone.
 
 My main text editor of choice is Neovim, and the Treesitter plugin is one of the greatest out there, featuring a very powerful syntax parser to get a very colorful syntax highlighting (if your colorscheme supports it).
 
