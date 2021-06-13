@@ -1,6 +1,13 @@
 # Nordokai
 A Vim/Neovim colorscheme based on the syntax highlighting from [Monokai Pro](https://monokai.pro/vscode) and the [Nord](https://www.nordtheme.com/) color palette.
 
+# Table of contents
+* [Introduction](#introduction)
+* [Images](#images)
+* [Features](#features)
+* [Installation](#installation)
+
+# Introduction
 One of my favorites colorschemes for every text editor is the [nord colorscheme](https://www.nordtheme.com/ports) which is available on almost every platform.
 
 However, I find some troubles trying to accept the lack of color variety, since it always uses the same bueish color tone.
@@ -13,13 +20,18 @@ Trying some new colorschemes for Vim/Neovim I found the [Sonokai project](https:
 
 This is when I came in the idea of creating my own colorscheme, with nice Treesitter support using as template the [Sonokai project](https://github.com/sainnhe/sonokai), and using my favourite color palette of choice from the [Nord project](https://www.nordtheme.com/).
 
-This was the result:
-
+# Images
 Images coming soon!!
 
 # Features
 * Nord based colors
 * Monokai Pro based syntax highlighting
 * Transparent background (optional)
-* Italics (optional)
+* Bold
 * Treesitter support (optional - needs [Treesitter plugin](https://github.com/nvim-treesitter/nvim-treesitter) installed and configured with the appropiate parsers)
+
+# Installation
+Using [vim-plug](https://github.com/junegunn/vim-plug):
+```vim
+Plug 'stonefeld/nordokai'
+```
