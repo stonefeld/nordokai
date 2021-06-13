@@ -1,44 +1,37 @@
 function! nordokai#get_configuration() "{{{
   return {
-    \ 'style': get(g:, 'nordokai_style', 'default'),
-    \ 'transparent_background': get(g:, 'nordokai_transparent_background', 0),
-    \ 'disable_italic_comment': get(g:, 'nordokai_disable_italic_comment', 0),
-    \ 'enable_italic': get(g:, 'nordokai_enable_italic', 0),
-    \ 'cursor': get(g:, 'nordokai_cursor', 'auto'),
-    \ 'menu_selection_background': get(g:, 'nordokai_menu_selection_background', 'gray'),
-    \ 'sign_column_background': get(g:, 'nordokai_sign_column_background', 'default'),
-    \ 'current_word': get(g:, 'nordokai_current_word', 'grey background'),
-    \ 'lightline_disable_bold': get(g:, 'nordokai_lightline_disable_bold', 0),
-    \ 'diagnostic_line_highlight': get(g:, 'nordokai_diagnostic_line_highlight', 0),
-    \ 'better_performance': get(g:, 'nordokai_better_performance', 0),
-    \ }
+        \ 'transparent_background': get(g:, 'nordokai_transparent_background', 0),
+        \ 'menu_selection_background': get(g:, 'nordokai_menu_selection_background', 'gray'),
+        \ 'sign_column_background': get(g:, 'nordokai_sign_column_background', 'default'),
+        \ 'current_word': get(g:, 'nordokai_current_word', 'gray background'),
+        \ 'diagnostic_line_highlight': get(g:, 'nordokai_diagnostic_line_highlight', 0),
+        \ 'better_performance': get(g:, 'nordokai_better_performance', 0),
+        \ }
 endfunction "}}}
 
-function! nordokai#get_palette(style) "{{{
-  if a:style ==# 'default'
-    let palette = {
-      \ 'nordokai0':        ['#2E3440', 'NONE', 'Black'    ],
-      \ 'nordokai1':        ['#3B4252', 0,      'DarkGrey' ],
-      \ 'nordokai2':        ['#434C5E', 'NONE', 'DarkGrey' ],
-      \ 'nordokai3':        ['#4C566A', 8,      'DarkGrey' ],
-      \ 'nordokai3_bright': ['#616E88', 'NONE', 'LightGrey'],
-      \ 'nordokai4':        ['#D8DEE9', 'NONE', 'White'    ],
-      \ 'nordokai5':        ['#E5E9F0', 7,      'White'    ],
-      \ 'nordokai6':        ['#ECEFF4', 15,     'White'    ],
-      \ 'nordokai7':        ['#8FBCBB', 14,     'DarkBlue' ],
-      \ 'nordokai7_bright': ['#9FBCBB', 14,     'LightBlue'],
-      \ 'nordokai8':        ['#88C0D0', 6,      'DarkBlue' ],
-      \ 'nordokai9':        ['#81A1C1', 4,      'DarkBlue' ],
-      \ 'nordokai10':       ['#5E81AC', 12,     'DarkBlue' ],
-      \ 'nordokai11':       ['#BF616A', 1,      'Red'      ],
-      \ 'nordokai12':       ['#D08770', 11,     'Orange'   ],
-      \ 'nordokai13':       ['#EBCB8B', 3,      'Yellow'   ],
-      \ 'nordokai14':       ['#A3BE8C', 2,      'Green'    ],
-      \ 'nordokai15':       ['#B48EAD', 5,      'Magenta'  ],
-      \ 'nordokai16':       ['#7F8490', 'NONE', 'LightGrey'],
-      \ 'none':             ['NONE',    'NONE', 'NONE'     ]
-      \ }
-  endif
+function! nordokai#get_palette() "{{{
+  let palette = {
+        \ 'nordokai0':        ['#2E3440', 'NONE', 'Black'    ],
+        \ 'nordokai1':        ['#3B4252', 0,      'DarkGray' ],
+        \ 'nordokai2':        ['#434C5E', 'NONE', 'DarkGray' ],
+        \ 'nordokai3':        ['#4C566A', 8,      'DarkGray' ],
+        \ 'nordokai3_bright': ['#616E88', 'NONE', 'LightGray'],
+        \ 'nordokai4':        ['#D8DEE9', 'NONE', 'White'    ],
+        \ 'nordokai5':        ['#E5E9F0', 7,      'White'    ],
+        \ 'nordokai6':        ['#ECEFF4', 15,     'White'    ],
+        \ 'nordokai7':        ['#8FBCBB', 14,     'DarkBlue' ],
+        \ 'nordokai7_bright': ['#9FBCBB', 14,     'LightBlue'],
+        \ 'nordokai8':        ['#88C0D0', 6,      'Cyan'     ],
+        \ 'nordokai9':        ['#81A1C1', 4,      'DarkBlue' ],
+        \ 'nordokai10':       ['#5E81AC', 12,     'DarkBlue' ],
+        \ 'nordokai11':       ['#BF616A', 1,      'Red'      ],
+        \ 'nordokai12':       ['#D08770', 11,     'Orange'   ],
+        \ 'nordokai13':       ['#EBCB8B', 3,      'Yellow'   ],
+        \ 'nordokai14':       ['#A3BE8C', 2,      'Green'    ],
+        \ 'nordokai15':       ['#B48EAD', 5,      'Magenta'  ],
+        \ 'nordokai16':       ['#7F8490', 'NONE', 'LightGray'],
+        \ 'none':             ['NONE',    'NONE', 'NONE'     ]
+        \ }
   return palette
 endfunction "}}}
 
