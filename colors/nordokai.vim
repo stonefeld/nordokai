@@ -77,8 +77,8 @@ call nordokai#highlight('WarningMsg', s:palette.nordokai13, s:palette.none, 'bol
 call nordokai#highlight('ModeMsg', s:palette.nordokai6, s:palette.none, 'bold')
 call nordokai#highlight('MoreMsg', s:palette.nordokai8, s:palette.none, 'bold')
 call nordokai#highlight('MatchParen', s:palette.none, s:palette.nordokai3_bright)
-call nordokai#highlight('NonText', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('Whitespace', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('NonText', s:palette.nordokai3, s:palette.none)
+call nordokai#highlight('Whitespace', s:palette.nordokai3, s:palette.none)
 call nordokai#highlight('SpecialKey', s:palette.nordokai7_bright, s:palette.none)
 call nordokai#highlight('Pmenu', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('PmenuSbar', s:palette.none, s:palette.nordokai2)
@@ -127,13 +127,9 @@ if has('nvim')
   highlight! link LspDiagnosticsDefaultWarning WarningText
   highlight! link LspDiagnosticsDefaultInformation InfoText
   highlight! link LspDiagnosticsDefaultHint HintText
-  highlight! link LspDiagnosticsVirtualTextError Gray
-  highlight! link LspDiagnosticsVirtualTextWarning Gray
-  highlight! link LspDiagnosticsVirtualTextInformation Gray
-  " highlight! link LspDiagnosticsVirtualTextHint Gray
-  " highlight! link LspDiagnosticsVirtualTextError Red
-  " highlight! link LspDiagnosticsVirtualTextWarning Yellow
-  " highlight! link LspDiagnosticsVirtualTextInformation Blue
+  highlight! link LspDiagnosticsVirtualTextError Red
+  highlight! link LspDiagnosticsVirtualTextWarning Yellow
+  highlight! link LspDiagnosticsVirtualTextInformation Blue
   highlight! link LspDiagnosticsVirtualTextHint Green
   highlight! link LspDiagnosticsUnderlineError ErrorTextLsp
   highlight! link LspDiagnosticsUnderlineWarning WarningTextLsp
@@ -155,7 +151,7 @@ endif
 " }}}
 " Syntax: {{{
 call nordokai#highlight('Type', s:palette.nordokai8, s:palette.none)
-call nordokai#highlight('Structure', s:palette.nordokai8, s:palette.none)
+call nordokai#highlight('Structure', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('StorageClass', s:palette.nordokai8, s:palette.none)
 call nordokai#highlight('Identifier', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Constant', s:palette.nordokai12, s:palette.none)
@@ -169,7 +165,7 @@ call nordokai#highlight('Exception', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Conditional', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Repeat', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Statement', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Macro', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('Macro', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Error', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Label', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Special', s:palette.nordokai15, s:palette.none)
@@ -303,13 +299,13 @@ highlight! link TSBoolean Purple
 highlight! link TSCharacter Yellow
 highlight! link TSComment Gray
 highlight! link TSConditional Blue
-highlight! link TSConstBuiltin Orange
+highlight! link TSConstBuiltin Purple
 highlight! link TSConstMacro Orange
-highlight! link TSConstant Purple
-highlight! link TSConstructor Orange
+highlight! link TSConstant Orange
+highlight! link TSConstructor Cyan
 highlight! link TSError ErrorText
 highlight! link TSException Blue
-highlight! link TSField LightBlue
+highlight! link TSField Green
 highlight! link TSFloat Purple
 highlight! link TSFuncBuiltin Green
 highlight! link TSFuncMacro Green
@@ -322,12 +318,12 @@ highlight! link TSMethod Green
 highlight! link TSNamespace Purple
 highlight! link TSNumber Purple
 highlight! link TSOperator Red
-highlight! link TSParameter Blue
+highlight! link TSParameter Fg
 highlight! link TSParameterReference Orange
 highlight! link TSProperty Green
-highlight! link TSPunctBracket Orange
-highlight! link TSPunctDelimiter Orange
-highlight! link TSPunctSpecial Fg
+highlight! link TSPunctBracket LightBlue
+highlight! link TSPunctDelimiter LightBlue
+highlight! link TSPunctSpecial LightBlue
 highlight! link TSRepeat Blue
 highlight! link TSString Yellow
 highlight! link TSStringEscape Green
