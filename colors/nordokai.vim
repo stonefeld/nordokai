@@ -76,12 +76,14 @@ call nordokai#highlight('ErrorMsg', s:palette.nordokai11, s:palette.none, 'bold,
 call nordokai#highlight('WarningMsg', s:palette.nordokai13, s:palette.none, 'bold')
 call nordokai#highlight('ModeMsg', s:palette.nordokai6, s:palette.none, 'bold')
 call nordokai#highlight('MoreMsg', s:palette.nordokai8, s:palette.none, 'bold')
-call nordokai#highlight('MatchParen', s:palette.none, s:palette.nordokai3_bright)
+call nordokai#highlight('MatchParen', s:palette.nordokai13, s:palette.none, 'bold')
 call nordokai#highlight('NonText', s:palette.nordokai3, s:palette.none)
 call nordokai#highlight('Whitespace', s:palette.nordokai3, s:palette.none)
 call nordokai#highlight('SpecialKey', s:palette.nordokai7_bright, s:palette.none)
 call nordokai#highlight('Pmenu', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('PmenuSbar', s:palette.none, s:palette.nordokai2)
+call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai16)
+call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
 if s:configuration.menu_selection_background ==# 'blue'
   call nordokai#highlight('PmenuSel', s:palette.nordokai0, s:palette.nordokai9)
 elseif s:configuration.menu_selection_background ==# 'nord'
@@ -93,10 +95,12 @@ elseif s:configuration.menu_selection_background ==# 'red'
 elseif s:configuration.menu_selection_background ==# 'gray'
   call nordokai#highlight('Pmenu', s:palette.nordokai16, s:palette.nordokai1)
   call nordokai#highlight('PmenuSel', s:palette.nordokai6, s:palette.nordokai3_bright)
+elseif s:configuration.menu_selection_background ==# 'bright'
+  call nordokai#highlight('Pmenu', s:palette.nordokai1, s:palette.nordokai6)
+  call nordokai#highlight('PmenuSel', s:palette.nordokai1, s:palette.nordokai4)
+  call nordokai#highlight('NormalFloat', s:palette.nordokai1, s:palette.nordokai6)
 endif
 highlight! link WildMenu PmenuSel
-call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai16)
-call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('Question', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('SpellBad', s:palette.nordokai11, s:palette.none, 'undercurl', s:palette.nordokai11)
 call nordokai#highlight('SpellCap', s:palette.nordokai13, s:palette.none, 'undercurl', s:palette.nordokai13)
@@ -150,41 +154,48 @@ endif
 
 " }}}
 " Syntax: {{{
-call nordokai#highlight('Type', s:palette.nordokai8, s:palette.none)
-call nordokai#highlight('Structure', s:palette.nordokai9, s:palette.none)
-call nordokai#highlight('StorageClass', s:palette.nordokai8, s:palette.none)
-call nordokai#highlight('Identifier', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Boolean', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Character', s:palette.nordokai13, s:palette.none)
+call nordokai#highlight('Comment', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Conditional', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('Constant', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Define', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Delimiter', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Emphasis', s:palette.none, s:palette.none, 'bold')
+call nordokai#highlight('Error', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Exception', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Field', s:palette.nordokai14, s:palette.none)
+call nordokai#highlight('Float', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Function', s:palette.nordokai8, s:palette.none)
+call nordokai#highlight('Identifier', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Ignore', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Include', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Keyword', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Label', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('Macro', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Namespace', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('Number', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('Operator', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Parameter', s:palette.nordokai6, s:palette.none)
 call nordokai#highlight('PreProc', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('PreCondit', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Include', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Keyword', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Define', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Typedef', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Exception', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Conditional', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Repeat', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Statement', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Macro', s:palette.nordokai12, s:palette.none)
-call nordokai#highlight('Error', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Label', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('Special', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('SpecialChar', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('Boolean', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('String', s:palette.nordokai13, s:palette.none)
-call nordokai#highlight('Character', s:palette.nordokai13, s:palette.none)
-call nordokai#highlight('Number', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('Float', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('Function', s:palette.nordokai14, s:palette.none)
-call nordokai#highlight('Operator', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Title', s:palette.nordokai6, s:palette.none)
-call nordokai#highlight('Tag', s:palette.nordokai12, s:palette.none)
-call nordokai#highlight('Delimiter', s:palette.nordokai6, s:palette.none)
-call nordokai#highlight('Comment', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Punct', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('Repeat', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Special', s:palette.nordokai14, s:palette.none)
+call nordokai#highlight('SpecialChar', s:palette.nordokai14, s:palette.none)
 call nordokai#highlight('SpecialComment', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('Todo', s:palette.nordokai8, s:palette.none)
-call nordokai#highlight('Ignore', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Structure', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('StorageClass', s:palette.nordokai8, s:palette.none)
+call nordokai#highlight('Statement', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('String', s:palette.nordokai14, s:palette.none)
+call nordokai#highlight('Tag', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Text', s:palette.nordokai6, s:palette.none)
+call nordokai#highlight('Title', s:palette.nordokai6, s:palette.none)
+call nordokai#highlight('Todo', s:palette.nordokai13, s:palette.none)
+call nordokai#highlight('Type', s:palette.nordokai13, s:palette.none)
+call nordokai#highlight('Typedef', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Underlined', s:palette.none, s:palette.none, 'underline')
+call nordokai#highlight('Variable', s:palette.nordokai6, s:palette.none)
 " }}}
 " Predefined Highlight Groups: {{{
 call nordokai#highlight('Fg', s:palette.nordokai6, s:palette.none)
@@ -293,52 +304,52 @@ highlight! link FloatermBorder Normal
 highlight! link LspDiagnosticsDefaultInformation HintBulb
 " }}}
 " nvim-treesitter/nvim-treesitter {{{
-highlight! link TSAnnotation Blue
-highlight! link TSAttribute Blue
-highlight! link TSBoolean Purple
-highlight! link TSCharacter Yellow
-highlight! link TSComment Gray
-highlight! link TSConditional Blue
-highlight! link TSConstBuiltin Purple
-highlight! link TSConstMacro Blue
-highlight! link TSConstant Orange
-highlight! link TSConstructor Cyan
-highlight! link TSError ErrorText
-highlight! link TSException Blue
-highlight! link TSField Green
-highlight! link TSFloat Purple
-highlight! link TSFuncBuiltin Green
-highlight! link TSFuncMacro Green
-highlight! link TSFunction Green
-highlight! link TSInclude Blue
-highlight! link TSKeyword Red
-highlight! link TSKeywordFunction Red
-highlight! link TSLabel Red
-highlight! link TSMethod Green
-highlight! link TSNamespace Purple
-highlight! link TSNumber Purple
-highlight! link TSOperator Red
-highlight! link TSParameter Fg
-highlight! link TSParameterReference Orange
-highlight! link TSProperty Green
-highlight! link TSPunctBracket LightBlue
-highlight! link TSPunctDelimiter LightBlue
-highlight! link TSPunctSpecial LightBlue
-highlight! link TSRepeat Blue
-highlight! link TSString Yellow
-highlight! link TSStringEscape Green
-highlight! link TSStringRegex Green
-highlight! link TSStructure Blue
-highlight! link TSTag Cyan
-highlight! link TSTagDelimiter Red
-highlight! link TSText Fg
-call nordokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'bold')
-call nordokai#highlight('TSUnderline', s:palette.none, s:palette.none, 'underline')
-highlight! link TSType Cyan
-highlight! link TSTypeBuiltin Blue
+highlight! link TSAnnotation Identifier
+highlight! link TSAttribute Identifier
+highlight! link TSBoolean Boolean
+highlight! link TSCharacter Character
+highlight! link TSComment Comment
+highlight! link TSConditional Conditional
+highlight! link TSConstBuiltin Keyword
+highlight! link TSConstMacro PreProc
+highlight! link TSConstant Constant
+highlight! link TSConstructor Type
+highlight! link TSEmphasis Emphasis
+highlight! link TSError Error
+highlight! link TSException Exception
+highlight! link TSField Field
+highlight! link TSFloat Float
+highlight! link TSFuncBuiltin Function
+highlight! link TSFuncMacro Macro
+highlight! link TSFunction Function
+highlight! link TSInclude Include
+highlight! link TSKeyword Keyword
+highlight! link TSKeywordFunction Keyword
+highlight! link TSLabel Label
+highlight! link TSMethod Function
+highlight! link TSNamespace Namespace
+highlight! link TSNumber Number
+highlight! link TSOperator Operator
+highlight! link TSParameter Parameter
+highlight! link TSParameterReference Parameter
+highlight! link TSProperty Function
+highlight! link TSPunctBracket Punct
+highlight! link TSPunctDelimiter Punct
+highlight! link TSPunctSpecial Punct
+highlight! link TSRepeat Repeat
+highlight! link TSString String
+highlight! link TSStringEscape Special
+highlight! link TSStringRegex Special
+highlight! link TSStructure Structure
+highlight! link TSTag Tag
+highlight! link TSTagDelimiter Delimiter
+highlight! link TSText Text
+highlight! link TSType Type
+highlight! link TSTypeBuiltin Type
+highlight! link TSUnderline Underlined
 highlight! link TSURI markdownUrl
-highlight! link TSVariable Fg
-highlight! link TSVariableBuiltin Orange
+highlight! link TSVariable Variable
+highlight! link TSVariableBuiltin Boolean
 " }}}
 " neoclide/coc.nvim {{{
 call nordokai#highlight('CocHoverRange', s:palette.none, s:palette.none, 'bold,underline')
