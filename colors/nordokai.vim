@@ -300,7 +300,7 @@ highlight! link TSCharacter Yellow
 highlight! link TSComment Gray
 highlight! link TSConditional Blue
 highlight! link TSConstBuiltin Purple
-highlight! link TSConstMacro Orange
+highlight! link TSConstMacro Blue
 highlight! link TSConstant Orange
 highlight! link TSConstructor Cyan
 highlight! link TSError ErrorText
@@ -507,7 +507,7 @@ call nordokai#highlight('deniteStatusLinePath', s:palette.nordokai6, s:palette.n
 highlight! link deniteSelectedLine Green
 " }}}
 " kien/ctrlp.vim{{{
-call nordokai#highlight('CtrlPMatch', s:palette.nordokai14, s:palette.none, 'bold')
+call nordokai#highlight('CtrlPMatch', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('CtrlPPrtBase', s:palette.nordokai16, s:palette.none)
 call nordokai#highlight('CtrlPLinePre', s:palette.nordokai16, s:palette.none)
 call nordokai#highlight('CtrlPMode1', s:palette.nordokai8, s:palette.nordokai1, 'bold')
