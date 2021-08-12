@@ -164,7 +164,7 @@ call nordokai#highlight('Delimiter', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('Emphasis', s:palette.none, s:palette.none, 'bold')
 call nordokai#highlight('Error', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Exception', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Field', s:palette.nordokai14, s:palette.none)
+call nordokai#highlight('Field', s:palette.nordokai7, s:palette.none)
 call nordokai#highlight('Float', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Function', s:palette.nordokai8, s:palette.none)
 call nordokai#highlight('Identifier', s:palette.nordokai9, s:palette.none)
@@ -248,6 +248,12 @@ call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai
 call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
 call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai2)
 call nordokai#highlight('HintBulb', s:palette.nordokai13, s:palette.nordokai1)
+if s:configuration.menu_selection_background ==# 'bright'
+  call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai6)
+  call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai6)
+  call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai6)
+  call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai6)
+endif
 if &diff
   call nordokai#highlight('CurrentWord', s:palette.nordokai0, s:palette.nordokai14)
 elseif s:configuration.current_word ==# 'gray background'
