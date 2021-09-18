@@ -1,7 +1,7 @@
 function! nordokai#get_configuration() "{{{
   return {
         \ 'transparent_background': get(g:, 'nordokai_transparent_background', 0),
-        \ 'menu_selection_background': get(g:, 'nordokai_menu_selection_background', 'bright'),
+        \ 'menu_selection_background': get(g:, 'nordokai_menu_selection_background', 'gray'),
         \ 'sign_column_background': get(g:, 'nordokai_sign_column_background', 'default'),
         \ 'current_word': get(g:, 'nordokai_current_word', 'gray background'),
         \ 'diagnostic_line_highlight': get(g:, 'nordokai_diagnostic_line_highlight', 0),
