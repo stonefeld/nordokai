@@ -21,30 +21,30 @@ if s:configuration.transparent_background
   call nordokai#highlight('Normal', s:palette.nordokai6, s:palette.none)
   call nordokai#highlight('Terminal', s:palette.nordokai6, s:palette.none)
   call nordokai#highlight('EndOfBuffer', s:palette.nordokai1, s:palette.none)
-  call nordokai#highlight('Folded', s:palette.nordokai16, s:palette.none)
+  call nordokai#highlight('Folded', s:palette.nordokai3_bright, s:palette.none)
   call nordokai#highlight('ToolbarLine', s:palette.nordokai6, s:palette.none)
   call nordokai#highlight('SignColumn', s:palette.nordokai6, s:palette.none)
-  call nordokai#highlight('FoldColumn', s:palette.nordokai16, s:palette.none)
+  call nordokai#highlight('FoldColumn', s:palette.nordokai3_bright, s:palette.none)
 else
   call nordokai#highlight('Normal', s:palette.nordokai6, s:palette.nordokai0)
   call nordokai#highlight('Terminal', s:palette.nordokai6, s:palette.nordokai0)
   call nordokai#highlight('EndOfBuffer', s:palette.nordokai1, s:palette.nordokai0)
-  call nordokai#highlight('Folded', s:palette.nordokai16, s:palette.nordokai1)
+  call nordokai#highlight('Folded', s:palette.nordokai3_bright, s:palette.nordokai1)
   call nordokai#highlight('ToolbarLine', s:palette.nordokai6, s:palette.nordokai2)
   if s:configuration.sign_column_background ==# 'default'
     call nordokai#highlight('SignColumn', s:palette.nordokai6, s:palette.nordokai1)
-    call nordokai#highlight('FoldColumn', s:palette.nordokai16, s:palette.nordokai1)
+    call nordokai#highlight('FoldColumn', s:palette.nordokai3_bright, s:palette.nordokai1)
   else
     call nordokai#highlight('SignColumn', s:palette.nordokai6, s:palette.none)
-    call nordokai#highlight('FoldColumn', s:palette.nordokai16, s:palette.none)
+    call nordokai#highlight('FoldColumn', s:palette.nordokai3_bright, s:palette.none)
   endif
 endif
-call nordokai#highlight('LineNr', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('IncSearch', s:palette.nordokai0, s:palette.nordokai13)
+call nordokai#highlight('LineNr', s:palette.nordokai3, s:palette.none)
+call nordokai#highlight('IncSearch', s:palette.nordokai1, s:palette.nordokai13)
 call nordokai#highlight('Search', s:palette.none, s:palette.nordokai3)
 call nordokai#highlight('ColorColumn', s:palette.none, s:palette.nordokai1)
-call nordokai#highlight('Conceal', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('Cursor', s:palette.nordokai0, s:palette.nordokai0)
+call nordokai#highlight('Conceal', s:palette.nordokai3_bright, s:palette.none)
+call nordokai#highlight('Cursor', s:palette.nordokai0, s:palette.nordokai6)
 highlight! link vCursor Cursor
 highlight! link iCursor Cursor
 highlight! link lCursor Cursor
@@ -77,12 +77,12 @@ call nordokai#highlight('WarningMsg', s:palette.nordokai13, s:palette.none, 'bol
 call nordokai#highlight('ModeMsg', s:palette.nordokai6, s:palette.none, 'bold')
 call nordokai#highlight('MoreMsg', s:palette.nordokai8, s:palette.none, 'bold')
 call nordokai#highlight('MatchParen', s:palette.nordokai13, s:palette.none, 'bold')
-call nordokai#highlight('NonText', s:palette.nordokai3, s:palette.none)
+call nordokai#highlight('NonText', s:palette.nordokai1, s:palette.none)
 call nordokai#highlight('Whitespace', s:palette.nordokai3, s:palette.none)
 call nordokai#highlight('SpecialKey', s:palette.nordokai7_bright, s:palette.none)
 call nordokai#highlight('Pmenu', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('PmenuSbar', s:palette.none, s:palette.nordokai2)
-call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai16)
+call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai3_bright)
 call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
 if s:configuration.menu_selection_background ==# 'blue'
   call nordokai#highlight('PmenuSel', s:palette.nordokai0, s:palette.nordokai9)
@@ -93,8 +93,8 @@ elseif s:configuration.menu_selection_background ==# 'green'
 elseif s:configuration.menu_selection_background ==# 'red'
   call nordokai#highlight('PmenuSel', s:palette.nordokai0, s:palette.nordokai11)
 elseif s:configuration.menu_selection_background ==# 'gray'
-  call nordokai#highlight('Pmenu', s:palette.nordokai16, s:palette.nordokai1)
-  call nordokai#highlight('PmenuSel', s:palette.nordokai6, s:palette.nordokai3_bright)
+  call nordokai#highlight('Pmenu', s:palette.nordokai4, s:palette.nordokai1)
+  call nordokai#highlight('PmenuSel', s:palette.nordokai1, s:palette.nordokai4)
 elseif s:configuration.menu_selection_background ==# 'bright'
   call nordokai#highlight('Pmenu', s:palette.nordokai1, s:palette.nordokai6)
   call nordokai#highlight('PmenuSel', s:palette.nordokai1, s:palette.nordokai4)
@@ -106,14 +106,16 @@ call nordokai#highlight('SpellBad', s:palette.nordokai11, s:palette.none, 'under
 call nordokai#highlight('SpellCap', s:palette.nordokai13, s:palette.none, 'undercurl', s:palette.nordokai13)
 call nordokai#highlight('SpellLocal', s:palette.nordokai8, s:palette.none, 'undercurl', s:palette.nordokai8)
 call nordokai#highlight('SpellRare', s:palette.nordokai15, s:palette.none, 'undercurl', s:palette.nordokai15)
-call nordokai#highlight('StatusLine', s:palette.nordokai6, s:palette.nordokai3)
-call nordokai#highlight('StatusLineTerm', s:palette.nordokai6, s:palette.nordokai3)
-call nordokai#highlight('StatusLineNC', s:palette.nordokai16, s:palette.nordokai1)
-call nordokai#highlight('StatusLineTermNC', s:palette.nordokai16, s:palette.nordokai1)
-call nordokai#highlight('TabLine', s:palette.nordokai16, s:palette.nordokai1)
-call nordokai#highlight('TabLineFill', s:palette.nordokai16, s:palette.nordokai3)
+call nordokai#highlight('StatusLine', s:palette.nordokai6, s:palette.nordokai1)
+call nordokai#highlight('StatusLineOuterBlock', s:palette.nordokai1, s:palette.nordokai8)
+call nordokai#highlight('StatusLineInnerBlock', s:palette.nordokai4, s:palette.nordokai3)
+call nordokai#highlight('StatusLineTerm', s:palette.nordokai6, s:palette.nordokai2)
+call nordokai#highlight('StatusLineNC', s:palette.nordokai3_bright, s:palette.nordokai1)
+call nordokai#highlight('StatusLineTermNC', s:palette.nordokai3_bright, s:palette.nordokai1)
+call nordokai#highlight('TabLine', s:palette.nordokai3_bright, s:palette.nordokai1)
+call nordokai#highlight('TabLineFill', s:palette.nordokai3_bright, s:palette.nordokai3)
 call nordokai#highlight('TabLineSel', s:palette.nordokai6, s:palette.nordokai3_bright)
-call nordokai#highlight('VertSplit', s:palette.nordokai3, s:palette.nordokai3)
+call nordokai#highlight('VertSplit', s:palette.nordokai3, s:palette.none)
 call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai3)
 call nordokai#highlight('VisualNOS', s:palette.none, s:palette.nordokai3, 'underline')
 call nordokai#highlight('QuickFixLine', s:palette.nordokai8, s:palette.none, 'bold')
@@ -156,31 +158,32 @@ endif
 " Syntax: {{{
 call nordokai#highlight('Boolean', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Character', s:palette.nordokai14, s:palette.none)
-call nordokai#highlight('Comment', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('Conditional', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Comment', s:palette.nordokai3_bright, s:palette.none)
+call nordokai#highlight('Conditional', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Constant', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Define', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Delimiter', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Delimiter', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Emphasis', s:palette.none, s:palette.none, 'bold')
 call nordokai#highlight('Error', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Exception', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Field', s:palette.nordokai7, s:palette.none)
 call nordokai#highlight('Float', s:palette.nordokai12, s:palette.none)
-call nordokai#highlight('Function', s:palette.nordokai8, s:palette.none)
+call nordokai#highlight('Function', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('Identifier', s:palette.nordokai9, s:palette.none)
-call nordokai#highlight('Ignore', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Ignore', s:palette.nordokai3_bright, s:palette.none)
 call nordokai#highlight('Include', s:palette.nordokai9, s:palette.none)
-call nordokai#highlight('Keyword', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Keyword', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Label', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Macro', s:palette.nordokai12, s:palette.none)
-call nordokai#highlight('Namespace', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('Namespace', s:palette.nordokai8, s:palette.none)
 call nordokai#highlight('Number', s:palette.nordokai12, s:palette.none)
-call nordokai#highlight('Operator', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Parameter', s:palette.nordokai6, s:palette.none)
+call nordokai#highlight('Operator', s:palette.nordokai4, s:palette.none)
+call nordokai#highlight('Parameter', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('PreProc', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('PreCondit', s:palette.nordokai11, s:palette.none)
-call nordokai#highlight('Punct', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('Repeat', s:palette.nordokai9, s:palette.none)
+call nordokai#highlight('Property', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Punct', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Repeat', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Special', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('SpecialChar', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('SpecialComment', s:palette.nordokai13, s:palette.none)
@@ -188,7 +191,7 @@ call nordokai#highlight('Structure', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('StorageClass', s:palette.nordokai8, s:palette.none)
 call nordokai#highlight('Statement', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('String', s:palette.nordokai14, s:palette.none)
-call nordokai#highlight('Tag', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('Tag', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('Text', s:palette.nordokai6, s:palette.none)
 call nordokai#highlight('Title', s:palette.nordokai6, s:palette.none)
 call nordokai#highlight('Todo', s:palette.nordokai13, s:palette.none)
@@ -199,7 +202,7 @@ call nordokai#highlight('Variable', s:palette.nordokai6, s:palette.none)
 " }}}
 " Predefined Highlight Groups: {{{
 call nordokai#highlight('Fg', s:palette.nordokai6, s:palette.none)
-call nordokai#highlight('Gray', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('Gray', s:palette.nordokai3_bright, s:palette.none)
 call nordokai#highlight('LightGray', s:palette.nordokai3_bright, s:palette.none)
 call nordokai#highlight('Red', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Orange', s:palette.nordokai12, s:palette.none)
@@ -242,7 +245,7 @@ call nordokai#highlight('HintText', s:palette.nordokai14, s:palette.none)
 call nordokai#highlight('ErrorTextLsp', s:palette.none, s:palette.none, 'undercurl', s:palette.nordokai11)
 call nordokai#highlight('WarningTextLsp', s:palette.none, s:palette.none, 'undercurl', s:palette.nordokai13)
 call nordokai#highlight('InfoTextLsp', s:palette.none, s:palette.none, 'undercurl', s:palette.nordokai8)
-call nordokai#highlight('HintTextLsp', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('HintTextLsp', s:palette.nordokai3_bright, s:palette.none)
 call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai2)
 call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai2)
 call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
@@ -309,6 +312,9 @@ highlight! link FloatermBorder Normal
 " glepnir/lspsaga.nvim {{{
 highlight! link LspDiagnosticsDefaultInformation HintBulb
 " }}}
+" hrsh7th/nvim-cmp {{{
+call nordokai#highlight('CmpItemAbbrMatch', s:palette.none, s:palette.none, 'bold')
+" }}}
 " nvim-treesitter/nvim-treesitter {{{
 highlight! link TSAnnotation Identifier
 highlight! link TSAttribute Identifier
@@ -338,7 +344,7 @@ highlight! link TSNumber Number
 highlight! link TSOperator Operator
 highlight! link TSParameter Parameter
 highlight! link TSParameterReference Parameter
-highlight! link TSProperty Function
+highlight! link TSProperty Property
 highlight! link TSPunctBracket Punct
 highlight! link TSPunctDelimiter Punct
 highlight! link TSPunctSpecial Punct
@@ -525,13 +531,15 @@ highlight! link deniteSelectedLine Green
 " }}}
 " kien/ctrlp.vim{{{
 call nordokai#highlight('CtrlPMatch', s:palette.nordokai15, s:palette.none)
-call nordokai#highlight('CtrlPPrtBase', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('CtrlPLinePre', s:palette.nordokai16, s:palette.none)
-call nordokai#highlight('CtrlPMode1', s:palette.nordokai8, s:palette.nordokai1, 'bold')
-call nordokai#highlight('CtrlPMode2', s:palette.nordokai1, s:palette.nordokai8, 'bold')
-call nordokai#highlight('CtrlPStats', s:palette.nordokai16, s:palette.nordokai1, 'bold')
+call nordokai#highlight('CtrlPPrtBase', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('CtrlPLinePre', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('CtrlPMode1', s:palette.nordokai4, s:palette.nordokai2)
+call nordokai#highlight('CtrlPMode2', s:palette.nordokai4, s:palette.nordokai2)
+call nordokai#highlight('CtrlPStats', s:palette.nordokai4, s:palette.nordokai2)
+call nordokai#highlight('CtrlPPrtCursor', s:palette.nordokai0, s:palette.nordokai4)
 highlight! link CtrlPNoEntries Red
-highlight! link CtrlPPrtCursor Blue
+highlight! link CtrlPBufferPath Normal
+highlight! link CtrlPBufferHid Normal
 " }}}
 " airblade/vim-gitgutter {{{
 highlight! link GitGutterAdd GreenSign
@@ -582,8 +590,8 @@ highlight! link CursorWord0 CurrentWord
 highlight! link CursorWord1 CurrentWord
 " }}}
 " Yggdroot/indentLine {{{
-let g:indentLine_color_gui = s:palette.nordokai16[0]
-let g:indentLine_color_term = s:palette.nordokai16[1]
+let g:indentLine_color_gui = s:palette.nordokai3_bright[0]
+let g:indentLine_color_term = s:palette.nordokai3_bright[1]
 " }}}
 " nathanaelkane/vim-indent-guides {{{
 if get(g:, 'indent_guides_auto_colors', 1) == 0
@@ -756,7 +764,7 @@ call nordokai#highlight('markdownH6', s:palette.nordokai6, s:palette.none, 'bold
 call nordokai#highlight('markdownUrl', s:palette.none, s:palette.none)
 call nordokai#highlight('markdown', s:palette.none, s:palette.none)
 call nordokai#highlight('markdownBold', s:palette.none, s:palette.none, 'bold')
-call nordokai#highlight('markdownDelimiter', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('markdownDelimiter', s:palette.nordokai3_bright, s:palette.none)
 highlight! link markdownCode Green
 highlight! link markdownCodeBlock Green
 highlight! link markdownCodeDelimiter Green
@@ -778,7 +786,7 @@ highlight! link markdownId Yellow
 " vim-markdown: https://github.com/gabrielelana/vim-markdown{{{
 call nordokai#highlight('mkdURL', s:palette.nordokai8, s:palette.none, 'underline')
 call nordokai#highlight('mkdInlineURL', s:palette.nordokai8, s:palette.none, 'underline')
-call nordokai#highlight('mkd', s:palette.nordokai16, s:palette.none)
+call nordokai#highlight('mkd', s:palette.nordokai3_bright, s:palette.none)
 highlight! link mkdCodeDelimiter Green
 highlight! link mkdBold Gray
 highlight! link mkdLink Red
@@ -1677,7 +1685,7 @@ highlight! link ps1BuiltIn Blue
 " }}}
 " }}}
 " vim {{{
-call nordokai#highlight('vimCommentTitle', s:palette.nordokai16, s:palette.none, 'bold')
+call nordokai#highlight('vimCommentTitle', s:palette.nordokai3_bright, s:palette.none, 'bold')
 highlight! link vimLet Red
 highlight! link vimFunction Green
 highlight! link vimIsCommand Fg

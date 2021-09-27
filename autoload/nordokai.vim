@@ -11,26 +11,25 @@ endfunction "}}}
 
 function! nordokai#get_palette() "{{{
   let palette = {
-        \ 'nordokai0':        ['#2E3440', 'NONE', 'Black'    ],
-        \ 'nordokai1':        ['#3B4252', 0,      'DarkGray' ],
-        \ 'nordokai2':        ['#434C5E', 'NONE', 'DarkGray' ],
-        \ 'nordokai3':        ['#4C566A', 8,      'DarkGray' ],
-        \ 'nordokai3_bright': ['#616E88', 'NONE', 'LightGray'],
-        \ 'nordokai4':        ['#D8DEE9', 'NONE', 'White'    ],
-        \ 'nordokai5':        ['#E5E9F0', 7,      'White'    ],
-        \ 'nordokai6':        ['#ECEFF4', 15,     'White'    ],
-        \ 'nordokai7':        ['#8FBCBB', 14,     'DarkBlue' ],
-        \ 'nordokai7_bright': ['#9FBCBB', 14,     'LightBlue'],
-        \ 'nordokai8':        ['#88C0D0', 6,      'Cyan'     ],
-        \ 'nordokai9':        ['#81A1C1', 4,      'DarkBlue' ],
-        \ 'nordokai10':       ['#5E81AC', 12,     'DarkBlue' ],
-        \ 'nordokai11':       ['#BF616A', 1,      'Red'      ],
-        \ 'nordokai12':       ['#D08770', 11,     'Orange'   ],
-        \ 'nordokai13':       ['#EBCB8B', 3,      'Yellow'   ],
-        \ 'nordokai14':       ['#A3BE8C', 2,      'Green'    ],
-        \ 'nordokai15':       ['#B48EAD', 5,      'Magenta'  ],
-        \ 'nordokai16':       ['#7F8490', 'NONE', 'LightGray'],
-        \ 'none':             ['NONE',    'NONE', 'NONE'     ]
+        \ 'nordokai0':        ['#2E3440', 'NONE', 'Black'     ],
+        \ 'nordokai1':        ['#3B4252', 0,      'LightBlack'],
+        \ 'nordokai2':        ['#434C5E', 'NONE', 'DarkGray'  ],
+        \ 'nordokai3':        ['#4C566A', 8,      'Gray'      ],
+        \ 'nordokai3_bright': ['#616E88', 'NONE', 'LightGray' ],
+        \ 'nordokai4':        ['#D8DEE9', 'NONE', 'White1'    ],
+        \ 'nordokai5':        ['#E5E9F0', 7,      'White2'    ],
+        \ 'nordokai6':        ['#ECEFF4', 15,     'White3'    ],
+        \ 'nordokai7':        ['#8FBCBB', 14,     'LightBlue' ],
+        \ 'nordokai7_bright': ['#9FBCBB', 14,     'LightCyan' ],
+        \ 'nordokai8':        ['#88C0D0', 6,      'Cyan'      ],
+        \ 'nordokai9':        ['#81A1C1', 4,      'Blue'      ],
+        \ 'nordokai10':       ['#5E81AC', 12,     'DarkBlue'  ],
+        \ 'nordokai11':       ['#BF616A', 1,      'Red'       ],
+        \ 'nordokai12':       ['#D08770', 11,     'Orange'    ],
+        \ 'nordokai13':       ['#EBCB8B', 3,      'Yellow'    ],
+        \ 'nordokai14':       ['#A3BE8C', 2,      'Green'     ],
+        \ 'nordokai15':       ['#B48EAD', 5,      'Magenta'   ],
+        \ 'none':             ['NONE',    'NONE', 'NONE'      ]
         \ }
   return palette
 endfunction "}}}
