@@ -80,7 +80,11 @@ call nordokai#highlight('SpecialKey', s:palette.nordokai7_bright, s:palette.none
 call nordokai#highlight('Pmenu', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('PmenuSbar', s:palette.none, s:palette.nordokai2)
 call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai3_bright)
-call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
+if s:configuration.transparent_float
+  call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.none)
+else
+  call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
+endif
 if s:configuration.menu_selection_background ==# 'blue'
   call nordokai#highlight('PmenuSel', s:palette.nordokai0, s:palette.nordokai9)
 elseif s:configuration.menu_selection_background ==# 'nord'
@@ -238,10 +242,17 @@ call nordokai#highlight('ErrorTextLsp', s:palette.none, s:palette.none, 'undercu
 call nordokai#highlight('WarningTextLsp', s:palette.none, s:palette.none, 'undercurl', s:palette.nordokai13)
 call nordokai#highlight('InfoTextLsp', s:palette.none, s:palette.none, 'undercurl', s:palette.nordokai8)
 call nordokai#highlight('HintTextLsp', s:palette.nordokai3_bright, s:palette.none)
-call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai2)
-call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai2)
-call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
-call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai2)
+if s:configuration.transparent_float
+  call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.none)
+  call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.none)
+  call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.none)
+  call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.none)
+else
+  call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai2)
+  call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai2)
+  call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
+  call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai2)
+endif
 if s:configuration.menu_selection_background ==# 'bright'
   call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai6)
   call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai6)
