@@ -399,6 +399,43 @@ highlight! link CtrlPPrtBase Orange
 highlight! link CtrlPPrtCursor Normal
 highlight! link CtrlPLinePre Orange
 " }}}
+" nvim-cmp {{{
+" https://github.com/hrsh7th/nvim-cmp
+call nordokai#highlight('CmpItemAbbr', s:palette.nordokai4, s:palette.none)
+" call nordokai#highlight('CmpItemAbbrMatch', s:palette.nordokai4, s:palette.none, 'bold,underline')
+highlight! link CmpItemMenu Gray
+highlight! link CmpItemKindVariable LightBlue
+highlight! link CmpItemKindInterface LightBlue
+highlight! link CmpItemKindEnum LightBlue
+highlight! link CmpItemKindStruct LightBlue
+highlight! link CmpItemKindConstructor LightBlue
+highlight! link CmpItemKindEvent LightBlue
+highlight! link CmpItemKindTypeParameter LightBlue
+highlight! link CmpItemKindText LightGray
+highlight! link CmpItemKindSnippet LightGray
+highlight! link CmpItemKindFunction Purple
+highlight! link CmpItemKindMethod Purple
+highlight! link CmpItemKindClass Purple
+highlight! link CmpItemKindModule Purple
+highlight! link CmpItemKindReference Purple
+highlight! link CmpItemKindKeyword Red
+highlight! link CmpItemKindProperty Red
+highlight! link CmpItemKindEnumMember Red
+highlight! link CmpItemKindValue Red
+highlight! link CmpItemKindField Red
+highlight! link CmpItemKindOperator Red
+highlight! link CmpItemKindUnit Orange
+highlight! link CmpItemKindConstant Orange
+highlight! link CmpItemKindFolder Green
+highlight! link CmpItemKindFile Green
+" }}}
+" telescope {{{
+" https://github.com/nvim-telescope/telescope.nvim
+call nordokai#highlight('TelescopeSelectionCaret', s:palette.nordokai12, s:palette.nordokai3, 'bold')
+highlight! link TelescopeTitle Green
+highlight! link TelescopeBorder LightGray
+highlight! link TelescopePromptCounter LightGray
+" }}}
 " }}}
 " Extended File Types: {{{
 " vim-plug: https://github.com/junegunn/vim-plug {{{
