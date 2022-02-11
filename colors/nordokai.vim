@@ -154,7 +154,13 @@ endif
 " Syntax: {{{
 call nordokai#highlight('Boolean', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Character', s:palette.nordokai14, s:palette.none)
-call nordokai#highlight('Comment', s:palette.nordokai3_bright, s:palette.none)
+if s:configuration.italic_comments
+  call nordokai#highlight('Comment', s:palette.nordokai3_bright, s:palette.none, 'italic')
+  call nordokai#highlight('SpecialComment', s:palette.nordokai13, s:palette.none, 'italic')
+else
+  call nordokai#highlight('Comment', s:palette.nordokai3_bright, s:palette.none)
+  call nordokai#highlight('SpecialComment', s:palette.nordokai13, s:palette.none)
+endif
 call nordokai#highlight('Conditional', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Constant', s:palette.nordokai12, s:palette.none)
 call nordokai#highlight('Define', s:palette.nordokai11, s:palette.none)
@@ -182,7 +188,6 @@ call nordokai#highlight('Punct', s:palette.nordokai11, s:palette.none)
 call nordokai#highlight('Repeat', s:palette.nordokai15, s:palette.none)
 call nordokai#highlight('Special', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('SpecialChar', s:palette.nordokai13, s:palette.none)
-call nordokai#highlight('SpecialComment', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('Structure', s:palette.nordokai9, s:palette.none)
 call nordokai#highlight('StorageClass', s:palette.nordokai8, s:palette.none)
 call nordokai#highlight('Statement', s:palette.nordokai11, s:palette.none)

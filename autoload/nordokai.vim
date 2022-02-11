@@ -6,7 +6,8 @@ function! nordokai#get_configuration() "{{{
         \ 'current_word': get(g:, 'nordokai_current_word', 'gray background'),
         \ 'diagnostic_line_highlight': get(g:, 'nordokai_diagnostic_line_highlight', 0),
         \ 'better_performance': get(g:, 'nordokai_better_performance', 0),
-        \ 'transparent_float': get(g:, 'nordokai_trasparent_float', 1),
+        \ 'transparent_float': get(g:, 'nordokai_transparent_float', 0),
+        \ 'italic_comments': get(g:, 'nordokai_italic_comments', 0),
         \ }
 endfunction "}}}
 
