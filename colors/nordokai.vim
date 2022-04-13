@@ -1,6 +1,6 @@
 " Initialization: {{{
 let s:configuration = nordokai#get_configuration()
-let s:palette = nordokai#get_palette()
+let s:palette = nordokai#get_palette(s:configuration.style)
 
 if !(exists('g:colors_name') && g:colors_name ==# 'nordokai' && s:configuration.better_performance)
   highlight clear
