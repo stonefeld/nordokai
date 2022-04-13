@@ -460,18 +460,12 @@ highlight! link plugUpdate Blue
 highlight! link plugDeleted Gray
 highlight! link plugEdge Purple
 " }}}
-" " vim-markdown: https://github.com/gabrielelana/vim-markdown{{{
-call nordokai#highlight('mkdURL', s:palette.nordokai8, s:palette.none, 'underline')
-call nordokai#highlight('mkdInlineURL', s:palette.nordokai8, s:palette.none, 'underline')
-call nordokai#highlight('mkd', s:palette.nordokai3_bright, s:palette.none)
-highlight! link mkdCodeDelimiter Green
-highlight! link mkdBold Gray
-highlight! link mkdLink Red
-highlight! link mkdHeading Gray
-highlight! link mkdListItem Red
-highlight! link mkdRule Purple
-highlight! link mkdDelimiter Gray
-highlight! link mkdId Yellow
+" markdown {{{
+" builtin
+highlight! link markdownCode String
+highlight! link markdownError Error
+highlight! link markdownCodeBlock String
+highlight! link markdownHeadingDelimiter Red
 " }}}
 " tex {{{
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX{{{
@@ -503,19 +497,17 @@ highlight! link texEnvArgName Green
 " }}}
 " html/markdown/javascriptreact/typescriptreact {{{
 " builtin: https://notabug.org/jorgesumle/vim-html-syntax{{{
-call nordokai#highlight('htmlH1', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlH2', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlH3', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlH4', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlH5', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlH6', s:palette.nordokai6, s:palette.none, 'bold')
-call nordokai#highlight('htmlLink', s:palette.none, s:palette.none, 'underline')
-call nordokai#highlight('htmlBold', s:palette.none, s:palette.none, 'bold')
-call nordokai#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
-call nordokai#highlight('htmlBold', s:palette.none, s:palette.none, 'bold')
-call nordokai#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
+call nordokai#highlight('htmlH1', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlH2', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlH3', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlH4', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlH5', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlH6', s:palette.nordokai9, s:palette.none, 'bold')
+call nordokai#highlight('htmlLink', s:palette.nordokai11, s:palette.none, 'underline')
+call nordokai#highlight('htmlBold', s:palette.nordokai13, s:palette.none, 'bold')
+call nordokai#highlight('htmlItalic', s:palette.nordokai15, s:palette.none, 'italic')
 call nordokai#highlight('htmlUnderline', s:palette.none, s:palette.none, 'underline')
-call nordokai#highlight('htmlUnderline', s:palette.none, s:palette.none, 'underline')
+call nordokai#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
 call nordokai#highlight('html', s:palette.none, s:palette.none)
 highlight! link htmlTag Red
 highlight! link htmlEndTag Red
