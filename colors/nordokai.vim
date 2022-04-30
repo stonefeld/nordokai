@@ -101,13 +101,18 @@ elseif s:configuration.menu_selection_background ==# 'bright'
   call nordokai#highlight('PmenuSel', s:palette.nordokai1, s:palette.nordokai4)
   call nordokai#highlight('NormalFloat', s:palette.nordokai1, s:palette.nordokai6)
 endif
-highlight! link WildMenu PmenuSel
+highlight! link WildMenu StatusLineAccent
 call nordokai#highlight('Question', s:palette.nordokai13, s:palette.none)
 call nordokai#highlight('SpellBad', s:palette.nordokai11, s:palette.none, 'undercurl', s:palette.nordokai11)
 call nordokai#highlight('SpellCap', s:palette.nordokai13, s:palette.none, 'undercurl', s:palette.nordokai13)
 call nordokai#highlight('SpellLocal', s:palette.nordokai8, s:palette.none, 'undercurl', s:palette.nordokai8)
 call nordokai#highlight('SpellRare', s:palette.nordokai15, s:palette.none, 'undercurl', s:palette.nordokai15)
-call nordokai#highlight('StatusLine', s:palette.nordokai6, s:palette.nordokai3)
+call nordokai#highlight('StatusLine', s:palette.nordokai0, s:palette.nordokai10)
+call nordokai#highlight('StatusLineAccent', s:palette.nordokai13, s:palette.none)
+call nordokai#highlight('StatusLineAccentInsert', s:palette.nordokai12, s:palette.none)
+call nordokai#highlight('StatusLineAccentVisual', s:palette.nordokai15, s:palette.none)
+call nordokai#highlight('StatusLineAccentReplace', s:palette.nordokai11, s:palette.none)
+call nordokai#highlight('StatusLineAccentCmd', s:palette.nordokai14, s:palette.none)
 call nordokai#highlight('StatusLineTerm', s:palette.nordokai6, s:palette.nordokai2)
 call nordokai#highlight('StatusLineNC', s:palette.nordokai3_bright, s:palette.nordokai1)
 call nordokai#highlight('StatusLineTermNC', s:palette.nordokai3_bright, s:palette.nordokai1)
