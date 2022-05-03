@@ -9,6 +9,7 @@ function! nordokai#get_configuration() "{{{
         \ 'better_performance': get(g:, 'nordokai_better_performance', 0),
         \ 'transparent_float': get(g:, 'nordokai_transparent_float', 0),
         \ 'italic_comments': get(g:, 'nordokai_italic_comments', 0),
+        \ 'invert_selecion': get(g:, 'nordokai_invert_selecion', 1),
         \ }
 endfunction "}}}
 

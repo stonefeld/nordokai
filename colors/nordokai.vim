@@ -120,7 +120,11 @@ call nordokai#highlight('TabLine', s:palette.nordokai3_bright, s:palette.nordoka
 call nordokai#highlight('TabLineFill', s:palette.nordokai3_bright, s:palette.nordokai3)
 call nordokai#highlight('TabLineSel', s:palette.nordokai6, s:palette.nordokai3_bright)
 call nordokai#highlight('VertSplit', s:palette.nordokai3, s:palette.none)
-call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai3)
+if s:configuration.invert_selecion ==# 1
+  call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai0, 'reverse')
+else
+  call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai3)
+endif
 call nordokai#highlight('VisualNOS', s:palette.none, s:palette.nordokai3, 'underline')
 highlight! link QuickFixLine Visual
 call nordokai#highlight('Debug', s:palette.nordokai13, s:palette.none)
@@ -441,6 +445,7 @@ highlight! link CmpItemKindFile Green
 " }}}
 " telescope {{{
 " https://github.com/nvim-telescope/telescope.nvim
+call nordokai#highlight('TelescopeSelection', s:palette.none, s:palette.nordokai3)
 call nordokai#highlight('TelescopeSelectionCaret', s:palette.nordokai12, s:palette.nordokai3, 'bold')
 highlight! link TelescopeTitle Green
 highlight! link TelescopeBorder LightGray
