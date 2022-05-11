@@ -83,7 +83,11 @@ call nordokai#highlight('PmenuThumb', s:palette.none, s:palette.nordokai3_bright
 if s:configuration.transparent_float
   call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.none)
 else
-  call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
+  if s:configuration.transparent_background
+    call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai1)
+  else
+    call nordokai#highlight('NormalFloat', s:palette.nordokai6, s:palette.nordokai2)
+  endif
 endif
 if s:configuration.menu_selection_background ==# 'blue'
   call nordokai#highlight('PmenuSel', s:palette.nordokai0, s:palette.nordokai9)
@@ -117,8 +121,8 @@ call nordokai#highlight('StatusLineTerm', s:palette.nordokai6, s:palette.nordoka
 call nordokai#highlight('StatusLineNC', s:palette.nordokai3_bright, s:palette.nordokai1)
 call nordokai#highlight('StatusLineTermNC', s:palette.nordokai3_bright, s:palette.nordokai1)
 call nordokai#highlight('TabLine', s:palette.nordokai3_bright, s:palette.nordokai1)
-call nordokai#highlight('TabLineFill', s:palette.nordokai3_bright, s:palette.nordokai3)
-call nordokai#highlight('TabLineSel', s:palette.nordokai6, s:palette.nordokai3_bright)
+call nordokai#highlight('TabLineFill', s:palette.nordokai6, s:palette.nordokai1)
+call nordokai#highlight('TabLineSel', s:palette.nordokai13, s:palette.nordokai3, 'bold')
 call nordokai#highlight('VertSplit', s:palette.nordokai3, s:palette.none)
 if s:configuration.invert_selecion ==# 1
   call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai0, 'reverse')
@@ -262,16 +266,22 @@ if s:configuration.transparent_float
   call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.none)
   call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.none)
 else
-  call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai2)
-  call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai2)
-  call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
-  call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai2)
-endif
-if s:configuration.menu_selection_background ==# 'bright'
-  call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai6)
-  call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai6)
-  call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai6)
-  call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai6)
+  if s:configuration.menu_selection_background ==# 'bright'
+    call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai6)
+    call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai6)
+    call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai6)
+    call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai6)
+  elseif s:configuration.transparent_background
+    call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai1)
+    call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai1)
+    call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai1)
+    call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai1)
+  else
+    call nordokai#highlight('ErrorFloat', s:palette.nordokai11, s:palette.nordokai2)
+    call nordokai#highlight('WarningFloat', s:palette.nordokai13, s:palette.nordokai2)
+    call nordokai#highlight('InfoFloat', s:palette.nordokai8, s:palette.nordokai2)
+    call nordokai#highlight('HintFloat', s:palette.nordokai14, s:palette.nordokai2)
+  endif
 endif
 if &diff
   call nordokai#highlight('CurrentWord', s:palette.nordokai0, s:palette.nordokai14)
