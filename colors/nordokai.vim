@@ -425,9 +425,13 @@ highlight! link CtrlPLinePre Orange
 " }}}
 " nvim-cmp {{{
 " https://github.com/hrsh7th/nvim-cmp
-call nordokai#highlight('CmpItemAbbr', s:palette.nordokai4, s:palette.none)
-" call nordokai#highlight('CmpItemAbbrMatch', s:palette.nordokai4, s:palette.none, 'bold,underline')
-highlight! link CmpItemMenu Gray
+if s:configuration.highlight_completion
+  call nordokai#highlight('CmpItemAbbr', s:palette.nordokai3_bright, s:palette.none)
+  call nordokai#highlight('CmpItemAbbrMatch', s:palette.nordokai4, s:palette.none, 'bold')
+else
+  call nordokai#highlight('CmpItemAbbr', s:palette.nordokai4, s:palette.none)
+endif
+highlight! link CmpItemMenu LightGray
 highlight! link CmpItemKindVariable LightBlue
 highlight! link CmpItemKindInterface LightBlue
 highlight! link CmpItemKindEnum LightBlue
