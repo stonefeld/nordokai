@@ -127,7 +127,7 @@ call nordokai#highlight('VertSplit', s:palette.nordokai3, s:palette.none)
 if s:configuration.invert_selecion ==# 1
   call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai0, 'reverse')
 else
-  call nordokai#highlight('Visual', s:palette.none, s:palette.nordokai3)
+  highlight! link Visual CursorLine
 endif
 call nordokai#highlight('VisualNOS', s:palette.none, s:palette.nordokai3, 'underline')
 highlight! link QuickFixLine Visual
